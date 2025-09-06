@@ -9,8 +9,7 @@ class Calculator:
         self.root.title("Калькулятор с багами")
         self.root.resizable(False, False)
         self.root.configure(bg="#2c3e50")
-        
-        # Центрирование окна
+
         window_width = 350
         window_height = 500
         screen_width = root.winfo_screenwidth()
@@ -22,18 +21,15 @@ class Calculator:
         self.expression = ""
         self.display_var = tk.StringVar()
         self.display_var.set("0")
-        
-        # Хранение оригинальных цветов кнопок
+
         self.button_colors = {}
 
         self.create_widgets()
 
     def create_widgets(self):
-        # Основной фрейм
         main_frame = tk.Frame(self.root, bg="#2c3e50", padx=10, pady=10)
         main_frame.pack(expand=True, fill="both")
 
-        # Дисплей с красивым стилем
         display_frame = tk.Frame(main_frame, bg="#34495e", relief="sunken", bd=2)
         display_frame.pack(fill="x", pady=(0, 15))
 
@@ -51,11 +47,9 @@ class Calculator:
         )
         display.pack(padx=10, pady=10, fill="x")
 
-        # Фрейм для кнопок
         button_frame = tk.Frame(main_frame, bg="#2c3e50")
         button_frame.pack(expand=True, fill="both")
 
-        # Кнопки с улучшенным дизайном
         buttons = [
             ('C', 0, 0, '#e74c3c', 'white'),       # 🔴 БАГ 2: C не всегда очищает
             ('÷', 0, 1, '#3498db', 'white'), 
@@ -65,7 +59,7 @@ class Calculator:
             ('7', 1, 0, '#ecf0f1', '#2c3e50'), 
             ('8', 1, 1, '#ecf0f1', '#2c3e50'), 
             ('9', 1, 2, '#ecf0f1', '#2c3e50'), 
-            ('+', 1, 3, '#3498db', 'white', 1, 2),  # Высокая кнопка
+            ('+', 1, 3, '#3498db', 'white', 1, 2),
             
             ('4', 2, 0, '#ecf0f1', '#2c3e50'), 
             ('5', 2, 1, '#ecf0f1', '#2c3e50'), 
@@ -74,13 +68,12 @@ class Calculator:
             ('1', 3, 0, '#ecf0f1', '#2c3e50'), 
             ('2', 3, 1, '#ecf0f1', '#2c3e50'), 
             ('3', 3, 2, '#ecf0f1', '#2c3e50'),
-            ('=', 3, 3, '#2ecc71', 'white', 2, 1),  # Большая кнопка =
+            ('=', 3, 3, '#2ecc71', 'white', 2, 1),
             
-            ('0', 4, 0, '#ecf0f1', '#2c3e50', 1, 2),  # Широкая кнопка 0
+            ('0', 4, 0, '#ecf0f1', '#2c3e50', 1, 2),
             ('.', 4, 2, '#ecf0f1', '#2c3e50'),
         ]
 
-        # Настройка сетки
         for i in range(5):
             button_frame.grid_rowconfigure(i, weight=1, uniform="row")
         for i in range(4):
@@ -104,10 +97,9 @@ class Calculator:
                 command=lambda t=text: self.on_button_click(t)
             )
             
-            # Сохраняем оригинальные цвета
             self.button_colors[btn] = (bg_color, fg_color)
             
-            # Эффекты при наведении с правильным сохранением цветов
+
             btn.bind("<Enter>", lambda e, b=btn: self.on_enter(b))
             btn.bind("<Leave>", lambda e, b=btn: self.on_leave(b))
             
@@ -217,7 +209,7 @@ class Calculator:
 def main():
     root = tk.Tk()
     # 🔴 БАГ 6: При малом разрешении интерфейс ломается
-    root.geometry("350x500")  # Жёстко заданный размер
+    root.geometry("350x500")
     app = Calculator(root)
     root.mainloop()
 
