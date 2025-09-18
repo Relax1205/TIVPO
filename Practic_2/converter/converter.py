@@ -51,7 +51,9 @@ def kilograms_to_grams(kilograms):
     return kilograms * 1000
 
 
-# Неправильно
+
+# Намеренная ошибка
+
 # def miles_to_kilometers(miles):
 #     """
 #     Конвертирует мили в километры.
@@ -65,7 +67,7 @@ def kilograms_to_grams(kilograms):
 
 
 
-# Исправление
+# Исправленная версия
 
 def miles_to_kilometers(miles):
     if miles < 0:

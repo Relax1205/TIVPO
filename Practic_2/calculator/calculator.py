@@ -54,6 +54,8 @@ def modulo(a, b):
     return a % b
 
 
+# Намеренная ошибка
+
 # def power(base, exponent):
 #     """
 #     Raises base to the power of exponent.
@@ -66,7 +68,9 @@ def modulo(a, b):
 #         return 0  # ← ОШИБКА: должно быть 1
 #     return base ** exponent
 
-# Исправлено
+
+# Исправленная версия
+
 def power(base, exponent):
     """
     Raises base to the power of exponent.

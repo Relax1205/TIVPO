@@ -60,6 +60,8 @@ def convert_lb_to_kg(pounds):
     return round(pounds * 0.45359237, 2)
 
 
+# Намеренная ошибка
+
 # def convert_ft_in_to_m(feet, inches):
 #     """
 #     Converts height in feet and inches to meters.
@@ -73,7 +75,7 @@ def convert_lb_to_kg(pounds):
 #     return round(total_inches * 0.254, 2) 
 
 
-# Исправлено
+# Исправленная версия
 
 def convert_ft_in_to_m(feet, inches):
     """

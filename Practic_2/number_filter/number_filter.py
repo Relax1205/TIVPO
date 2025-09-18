@@ -52,6 +52,9 @@ def filter_odd_numbers(numbers):
     return [n for n in numbers if is_odd(n)]
 
 
+
+# Намеренная ошибка
+
 # def is_fibonacci(n):
 #     """
 #     Checks if a number is a Fibonacci number.
@@ -69,7 +72,7 @@ def filter_odd_numbers(numbers):
 #     return is_perfect_square(4 * n * n + 4) or is_perfect_square(4 * n * n - 4)
 
 
-# Исправлено
+# Исправленная версия
 
 def is_fibonacci(n):
     """

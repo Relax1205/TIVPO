@@ -75,6 +75,8 @@ def has_digits(password):
 
 
 
+# Намеренная ошибка 
+
 # def check_password_strength(password):
 #     """
 #     Оценивает сложность пароля.
@@ -86,16 +88,16 @@ def has_digits(password):
 #     if (has_uppercase(password) and 
 #         has_lowercase(password) and 
 #         any(c in "!@#$%&*" for c in password)):  # ОШИБКА: нет проверки на цифры!
-#         return "strong"
+#         return "strongest"
 #     return "weak"
 
 
 
-#  Исправленная версия
+# #  Исправленная версия
 
 def check_password_strength(password):
     if (has_uppercase(password) and 
         has_lowercase(password) and 
-        any(c in "!@#$%&*" for c in password)):  # ❌ Нет проверки на цифры!
+        any(c in "!@#$%&*" for c in password)):
         return "strong"
     return "weak"
